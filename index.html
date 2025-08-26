@@ -1,57 +1,72 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio</title>
+  <title>Kehinde Ayodapo John | Frontend Developer</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+  <!-- Hero Section -->
   <header class="hero">
     <div class="container">
-      <img src="your-photo.jpg" alt="Your Name" class="profile-pic" />
-      <h1>Hello, I'm Your Name</h1>
-      <p>Frontend Developer | HTML, CSS, JavaScript</p>
-      <div class="hero-buttons">
-        <a href="#projects" class="btn">Projects</a>
-        <a href="#certificates" class="btn">Certificates</a>
-      </div>
+      <h1>Hi, I'm <span>Kehinde Ayodapo John</span></h1>
+      <p>I build clean, functional, and responsive websites using modern frontend technologies.</p>
+      <a href="#projects" class="btn">View My Work</a>
     </div>
-  </header>  <section id="about" class="section">
+  </header>
+
+  <!-- About Section -->
+  <section class="about" id="about">
     <div class="container">
       <h2>About Me</h2>
-      <p>This is a short intro about yourself. Passionate about building beautiful, functional web experiences.</p>
+      <p>
+        I'm a frontend web developer based in Nigeria, focused on crafting practical, real-world solutions with HTML, CSS, and JavaScript. 
+        I believe in writing code that not only works, but is also readable, scalable, and accessible.
+      </p>
+      <p>
+        My current focus is on deepening my JavaScript skills by building interactive projects that mirror real application behavior—handling user input, managing UI state, and working with the DOM in meaningful ways.
+        I host my projects publicly on GitHub as a way to share my learning process and showcase what I can do.
+      </p>
     </div>
-  </section>  <section id="projects" class="section">
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects" id="projects">
     <div class="container">
-      <h2>Projects</h2>
-      <div class="project-grid">
-        <!-- Example Project Card -->
-        <div class="project-card">
-          <h3>Project Title</h3>
-          <p>Short description of the project.</p>
-          <a href="#" class="btn">View Project</a>
-        </div>
+      <h2>Featured Projects</h2>
+      <div class="project-grid" id="project-grid">
+        <!-- JS will inject project cards here -->
       </div>
     </div>
-  </section>  <section id="certificates" class="section">
+  </section>
+
+  <!-- Certifications Section -->
+  <section class="certifications" id="certifications">
     <div class="container">
-      <h2>Certificates</h2>
-      <ul class="cert-list">
-        <li><a href="#">Responsive Web Design - FreeCodeCamp</a></li>
-        <!-- Add more certificates -->
+      <h2>Certifications</h2>
+      <ul>
+        <li>
+          <a href="https://www.freecodecamp.org/certification/your-username/responsive-web-design" target="_blank">
+            Responsive Web Design – FreeCodeCamp
+          </a>
+          <p>Learned how to build accessible and responsive websites using HTML and CSS, including Flexbox and Grid.</p>
+        </li>
+        <!-- You can add more certifications here later -->
       </ul>
     </div>
-  </section>  <section id="contact" class="section">
+  </section>
+
+  <!-- Contact Section -->
+  <footer class="contact" id="contact">
     <div class="container">
-      <h2>Contact Me</h2>
-      <p>Email: <a href="mailto:your@email.com">your@email.com</a></p>
-      <p>Facebook: <a href="https://facebook.com/yourprofile" target="_blank">facebook.com/yourprofile</a></p>
-      <!-- Add more social media if needed -->
-    </div>
-  </section>  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2025 Your Name. All rights reserved.</p>
+      <h2>Get In Touch</h2>
+      <p>If you’re interested in my work or want to connect, feel free to explore my GitHub.</p>
+      <a href="https://github.com/your-github-username" target="_blank" class="btn">Visit GitHub</a>
     </div>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
