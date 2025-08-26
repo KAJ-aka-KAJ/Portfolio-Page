@@ -1,84 +1,82 @@
-// ===== PROJECT DATA =====
-const projects = [
-  {
-    title: "Todo List App",
-    description:
-      "An elegant task manager built with vanilla JavaScript. Includes localStorage for persistence, intuitive UI, and responsive design.",
-    link: "https://github.com/your-github-username/todo-list"
-  },
-  {
-    title: "Image Slider",
-    description:
-      "A smooth, responsive image carousel with autoplay, manual navigation, and clean transitions — built from scratch with no libraries.",
-    link: "https://github.com/your-github-username/image-slider"
-  },
-  {
-    title: "Simple Calculator",
-    description:
-      "Fully functional calculator with keyboard support, input validation, and a clean layout. A great example of DOM-based app logic.",
-    link: "https://github.com/your-github-username/calculator"
-  }
-];
-
-// ===== INJECT PROJECT CARDS =====
-const projectGrid = document.getElementById('project-grid');
-
-projects.forEach(project => {
-  const card = document.createElement('div');
-  card.className = 'project-card hidden';
-
-  card.innerHTML = `
-    <div class="card-content">
-      <h3>${project.title}</h3>
-      <p>${project.description}</p>
-      <a href="${project.link}" target="_blank">View on GitHub →</a>
-    </div>
-  `;
-
-  projectGrid.appendChild(card);
+// 2. Smooth Scroll Navigation
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
 });
 
-// ===== SCROLL FADE-IN ANIMATION =====
-const observer = new IntersectionObserver(entries => {
+// 3. Scroll-to-Top Button
+const scrollBtn = document.getElementById('scrollToTop');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    scrollBtn.style.display = 'block';
+  } else {
+    scrollBtn.style.display = 'none';
+  }
+});
+scrollBtn.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// 6. Scroll-Triggered Animations (Intersection Observer)
+const animatedEls = document.querySelectorAll('.animate-on-scroll');
+const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.classList.add('fade-in');
-      observer.unobserve(entry.target); // Animate only once
+      entry.target.classList.add('animated');
+      observer.unobserve(entry.target);
     }
   });
-}, {
-  threshold: 0.1
-});
+}, { threshold: 0.2 });
+animatedEls.forEach(el => observer.observe(el));
 
-document.querySelectorAll('.project-card').forEach(card => {
-  observer.observe(card);
-});
+// 8. Animated Counter
+const counters = document.querySelectorAll('.counter');
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      const target = +el.getAttribute('data-target');
+      let current = 0;
+      const increment = Math.ceil(target / 100);
 
-// ===== TYPING EFFECT IN HERO SECTION =====
-const heroText = "I build clean, functional, and responsive websites using modern frontend technologies.";
-const heroParagraph = document.querySelector('.hero p');
-let i = 0;
+      const updateCounter = () => {
+        current += increment;
+        if (current >= target) {
+          el.textContent = target;
+        } else {
+          el.textContent = current;
+          requestAnimationFrame(updateCounter);
+        }
+      };
 
-function typeHeroText() {
-  if (i < heroText.length) {
-    heroParagraph.textContent += heroText.charAt(i);
-    i++;
-    setTimeout(typeHeroText, 30);
-  }
-}
+      updateCounter();
+      counterObserver.unobserve(el);
+    }
+  });
+}, { threshold: 1 });
 
-heroParagraph.textContent = "";
-typeHeroText();
+counters.forEach(counter => counterObserver.observe(counter));
 
-// ===== SMOOTH SCROLL FOR ANCHORS =====
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener("click", function (e) {
+// 10. Contact Form Validation
+const form = document.querySelector('form');
+form?.addEventListener('submit', function (e) {
+  const name = form.querySelector('input[name="name"]');
+  const email = form.querySelector('input[name="email"]');
+  const message = form.querySelector('textarea[name="message"]');
+
+  let errors = [];
+
+  if (!name.value.trim()) errors.push("Name is required.");
+  if (!email.value.trim() || !email.value.includes('@')) errors.push("Valid email is required.");
+  if (!message.value.trim()) errors.push("Message cannot be empty.");
+
+  if (errors.length > 0) {
     e.preventDefault();
-    const target = document.querySelector(this.getAttribute("href"));
-    if (target) {
-      target.scrollIntoView({
-        behavior: "smooth"
-      });
-    }
-  });
+    alert(errors.join('\n'));
+  }
 });

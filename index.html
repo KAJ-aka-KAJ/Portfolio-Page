@@ -3,75 +3,146 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kehinde Ayodapo John | Frontend Developer</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>John | Portfolio</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-
-  <!-- Hero Section -->
-  <section id="hero">
-  <div class="hero-container">
-    <div class="hero-text">
-      <h1>Hi, I'm Kehinde Ayodapo John</h1>
-      <p>I build clean, functional, and responsive websites using HTML, CSS, and JavaScript. Every line of code is written with care and purpose, focused on real-world results.</p>
-      <p>Every project I share reflects the discipline of constant practice and a passion for real frontend craftsmanship.</p>
+<!-- NAVIGATION BAR -->
+<header class="navbar">
+  <div class="nav-container">
+    <div class="logo">
+      <a href="index.html">John</a>
     </div>
-    <div class="hero-image">
-      <img src="https://www.facebook.com/photo.php?fbid=706004072487216&set=a.150178704736425&type=3&mibextid=rS40aB7S9Ucbxw6v" alt="Kehinde Ayodapo John">
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="work.html">Work</a>
+      <a href="certifications.html">Certifications</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <p class="intro">Hi, I'm John</p>
+        <h1>I Turn Ideas Into Clean, Functional Websites.</h1>
+        <p class="subheading">
+          I create responsive, user-focused web experiences that balance clarity, performance, and design.
+        </p>
+        <div class="hero-buttons">
+          <a href="contact.html" class="btn primary">Contact Me</a>
+          <a href="work.html" class="btn secondary">View My Work</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="assets/images/profile.jpg" alt="John's Photo" />
+      </div>
+    </div>
+  </section>
+  
+  <!-- SERVICES SECTION -->
+  <div class="fade-in">Some text or image</div>
+<section class="services">
+  <h2>What I Do</h2>
+  <div class="services-grid">
+    <div class="service-card">
+      <h3>Portfolio Website Design</h3>
+      <p>Custom personal websites to showcase skills and work.</p>
+    </div>
+    <div class="service-card">
+      <h3>Responsive Layout Builds</h3>
+      <p>I build websites that look great on any device — mobile, tablet, or desktop.</p>
+    </div>
+    <div class="service-card">
+      <h3>Landing Page Development</h3>
+      <p>High-converting landing pages for products, portfolios, and personal brands.</p>
     </div>
   </div>
 </section>
 
-  <!-- About Section -->
-  <section class="about" id="about">
-    <div class="container">
-      <h2>About Me</h2>
-      <p>
-        I'm a frontend web developer based in Nigeria, focused on crafting practical, real-world solutions with HTML, CSS, and JavaScript. 
-        I believe in writing code that not only works, but is also readable, scalable, and accessible.
-      </p>
-      <p>
-        My current focus is on deepening my JavaScript skills by building interactive projects that mirror real application behavior—handling user input, managing UI state, and working with the DOM in meaningful ways.
-        I host my projects publicly on GitHub as a way to share my learning process and showcase what I can do.
-      </p>
-    </div>
-  </section>
+<!-- ABOUT SECTION -->
+<div class="fade-in">Some text or image</div>
+<section class="about">
+  <h2>About Me</h2>
+  <div class="about-content">
+    <p>
+      I'm a web enthusiast passionate about building simple, user-focused websites.
+      I enjoy turning ideas into smooth, functional digital experiences.
+      Whether it's a personal site, a landing page, or a full portfolio,
+      I bring care and attention to every detail. I'm always learning, experimenting,
+      and growing as a creator.
+    </p>
 
-  <!-- Projects Section -->
-  <section class="projects" id="projects">
-    <div class="container">
-      <h2>Featured Projects</h2>
-      <div class="project-grid" id="project-grid">
-        <!-- JS will inject project cards here -->
-      </div>
-    </div>
-  </section>
+    <div class="skills">
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>JavaScript</span>
+      <span>Responsive Design</span>
+      <span>Git</span>
+      <span>Web Design</span>
+      
+      <section class="stats">
+  <div class="counter" data-target="50">0</div>
+  <p>Projects Completed</p>
+</section>
+</section>
+      
+      <!-- CTA SECTION -->
+      <div class="fade-in">Some text or image</div>
+<section class="cta">
+  <h2>Want to see what I’ve built?</h2>
+  <a href="work.html" class="cta-button">View My Work</a>
+</section>
 
-  <!-- Certifications Section -->
-  <section class="certifications" id="certifications">
-    <div class="container">
-      <h2>Certifications</h2>
+<section id="contact" class="contact-section">
+  <h2>Let's Connect</h2>
+  <p>You can reach me directly or send a quick message using the form below.</p>
+
+  <div class="contact-content">
+    <div class="contact-info">
+      <h3>Contact Info</h3>
       <ul>
-        <li>
-          <a href="https://www.freecodecamp.org/certification/your-username/responsive-web-design" target="_blank">
-            Responsive Web Design – FreeCodeCamp
-          </a>
-          <p>Learned how to build accessible and responsive websites using HTML and CSS, including Flexbox and Grid.</p>
-        </li>
-        <!-- You can add more certifications here later -->
+        <li><strong>Email:</strong> <a href="mailto:your@email.com">your@email.com</a></li>
+        <li><strong>Phone:</strong> <a href="tel:+2348123456789">+234 812 345 6789</a></li>
+        <li><strong>Twitter:</strong> <a href="https://twitter.com/yourhandle" target="_blank">@yourhandle</a></li>
+        <li><strong>GitHub:</strong> <a href="https://github.com/yourusername" target="_blank">yourusername</a></li>
       </ul>
     </div>
-  </section>
 
-  <!-- Contact Section -->
-  <footer class="contact" id="contact">
-    <div class="container">
-      <h2>Get In Touch</h2>
-      <p>If you’re interested in my work or want to connect, feel free to explore my GitHub.</p>
-      <a href="https://github.com/your-github-username" target="_blank" class="btn">Visit GitHub</a>
+    <div class="contact-form">
+      <h3>Send a Message</h3>
+      <form id="contactForm" action="#" method="post">
+        <input type="text" id="name" name="name" placeholder="Your Name" required />
+        <input type="email" id="email" name="email" placeholder="Your Email" required />
+        <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script src="script.js"></script>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+    <p>&copy; 2025 John. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="work.html">Work</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+
+      
+    </div>
+  </div>
+</section>
+
 </body>
+<button id="scrollToTopBtn" title="Go to top">↑</button>
 </html>
